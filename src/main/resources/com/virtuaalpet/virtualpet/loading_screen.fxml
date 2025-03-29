@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.virtuaalpet.virtualpet.LoadingScreenController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="460.0" layoutY="268.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <ImageView fitHeight="500.0" fitWidth="800.0">
+         <image>
+            <Image url="@Pic/Loading Screen.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="362.0" fitWidth="382.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Pic/2.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="332.0" layoutY="91.0" prefHeight="146.0" prefWidth="394.0" text="Virtual Pet" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Super Legend Boy" size="44.0" />
+         </font>
+      </Label>
+      <Rectangle fx:id="progressFill" arcHeight="5.0" arcWidth="5.0" fill="#ec1616" height="43.0" layoutX="423.0" layoutY="231.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="259.0" />
+      <Rectangle fx:id="progressFill1" arcHeight="5.0" arcWidth="5.0" fill="#eb171700" height="43.0" layoutX="423.0" layoutY="231.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="5.0" width="259.0" />
+      <ImageView fitHeight="113.0" fitWidth="94.0" layoutX="362.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Pic/heart.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
