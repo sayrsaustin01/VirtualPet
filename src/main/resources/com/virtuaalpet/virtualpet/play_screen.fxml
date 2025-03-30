@@ -13,12 +13,12 @@
             <Image url="@Pic/play.png" />
          </image>
       </ImageView>
-      <Button layoutX="241.0" layoutY="88.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="318.0" style="-fx-background-color: transparent;" text="NEW GAME">
+      <Button fx:id="newGame" onAction="#handlenewGame" layoutX="241.0" layoutY="88.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="318.0" style="-fx-background-color: transparent;" text="NEW GAME">
          <font>
             <Font name="Super Legend Boy" size="30.0" />
          </font>
       </Button>
-      <Button fx:id="backButton" onAction="#handleBackButton" layoutX="25.0" layoutY="423.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: transparent;" text="BACK TO MENU">
+      <Button fx:id="backButton" layoutX="25.0" layoutY="423.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: transparent;" text="BACK TO MENU">
          <font>
             <Font name="Super Legend Boy" size="12.0" />
          </font>
