@@ -2,50 +2,62 @@ package com.virtuaalpet.virtualpet;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-
-import java.io.IOException;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 
 public class TutorialScreenController {
 
     @FXML
-    private void handleNextButton(ActionEvent event) {
-        System.out.println("🟢 NEXT button clicked!");  // Debugging log
-
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/virtuaalpet/virtualpet/tutorial_screen2.fxml"));
-            Parent root = loader.load();
-
-            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.show();
-
-            System.out.println("✅ Tutorial Screen 2 loaded successfully!");
-        } catch (IOException e) {
-            System.err.println("❌ Error loading tutorial_screen2.fxml:");
-            e.printStackTrace();
-        }
-    }
+    private Label tutorialText; // Label for tutorial text
 
     @FXML
-    private void handleBackButton(ActionEvent event) {
-        System.out.println("🔵 BACK button clicked!");
+    private ImageView arrowImage; // ImageView for arrow
 
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/virtuaalpet/virtualpet/play_screen.fxml"));
-            Parent root = loader.load();
+    @FXML
+    private Button nextButton; // Next button
 
-            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.show();
+    private int textIndex = 0; // Tracks tutorial progress
 
-            System.out.println("✅ Play Screen loaded successfully!");
-        } catch (IOException e) {
-            System.err.println("❌ Error loading play_screen.fxml:");
-            e.printStackTrace();
+    // Tutorial messages
+    private final String[] tutorialMessages = {
+            "HI THERE, SINCE YOU HAVE CHOSEN YOUR PET, YOU ARE RESPONSIBLE TO TAKE CARE OF THIS PET, FOR THE REST OF YOUR LIFE",
+            "ON THE TOP RIGHT CORNER, YOU CAN SEE THREE BARS, WHICH INDICATES YOUR PET STATUS",
+            "THE FIRST BAR INDICATES YOUR PET’S LIFE/HEALTH",
+            "THE SECOND BAR INDICATES YOUR PET’S HUNGER",
+            "THE THIRD BAR INDICATES YOUR PET’S THIRSTINESS",
+            "THAT’S ALL FOR TODAY, GOOD LUCK!"
+    };
+
+    // Adjusted Arrow Positions (Shifted Left by 20px)
+    private final double[][] arrowPositions = {
+            {700, 30},  // Hidden at start
+            {590, 40},  // Pointing at status bars (top right)
+            {610, 0},  // First bar (Health)
+            {610, 40},  // Second bar (Hunger)
+            {610, 95},  // Third bar (Thirstiness)
+            {0, 0}      // Hide arrow at last message
+    };
+
+    @FXML
+    private void handleNextButton(ActionEvent event) {
+        textIndex++;
+
+        // Update the text
+        if (textIndex < tutorialMessages.length) {
+            tutorialText.setText(tutorialMessages[textIndex]);
+
+            // Move the arrow slightly left
+            arrowImage.setLayoutX(arrowPositions[textIndex][0]);
+            arrowImage.setLayoutY(arrowPositions[textIndex][1]);
+
+            // Show or hide arrow
+            arrowImage.setVisible(textIndex > 0 && textIndex < tutorialMessages.length - 1);
+        }
+
+        // Hide the Next button at the last message
+        if (textIndex == tutorialMessages.length - 1) {
+            nextButton.setVisible(false);
         }
     }
 }
