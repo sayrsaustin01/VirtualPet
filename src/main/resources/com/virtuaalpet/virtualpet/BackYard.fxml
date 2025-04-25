@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.virtuaalpet.virtualpet.Backyard">
+   <children>
+      <!-- Background Image -->
+      <ImageView fitHeight="412.0" fitWidth="723.0" layoutX="-123.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Pic/Backyard.png" />
+         </image>
+      </ImageView>
+      <!-- Menu Button -->
+      <Button fx:id="menuButton" layoutX="14.0" layoutY="6.0" prefHeight="50.0" prefWidth="89.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Pic/MenuButton.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <!-- Arrows Button -->
+      <Button fx:id="arrowsButton" layoutX="16.0" layoutY="313.0" prefHeight="57.0" prefWidth="64.0" rotate="180.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="57.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Pic/Arrows.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <!-- Health Bar with Icon -->
+      <ProgressBar fx:id="healthBar" layoutX="444.0" layoutY="21.0" prefHeight="18.0" prefWidth="140.0" progress="1.0" style="-fx-accent: #ff0000; -fx-control-inner-background: #808080;" />
+      <ImageView fitHeight="44.0" fitWidth="50.0" layoutX="421.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Pic/heart.png" />
+         </image>
+      </ImageView>
+      <!-- Hunger Bar with Icon -->
+      <ProgressBar fx:id="hungerBar" layoutX="437.0" layoutY="60.0" prefHeight="18.0" prefWidth="148.0" progress="1.0" style="-fx-accent: #ffff00; -fx-control-inner-background: #808080;" />
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="421.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Pic/DogFood.png" />
+         </image>
+      </ImageView>
+      <!-- Energy Bar with Icon -->
+      <ProgressBar fx:id="energyBar" layoutX="448.0" layoutY="105.0" prefHeight="18.0" prefWidth="140.0" progress="1.0" style="-fx-accent: #0000ff; -fx-control-inner-background: #808080;" />
+      <ImageView fitHeight="36.0" fitWidth="44.0" layoutX="425.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Pic/Potion.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
